@@ -1,0 +1,60 @@
+
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🐺♥🐇的故事</title>
+  <style>
+    body {
+      background: linear-gradient(to bottom, #1e3a8a, #6b21a8);
+      color: white;
+      font-family: sans-serif;
+      text-align: center;
+      padding: 40px;
+    }
+    .card {
+      background: white;
+      color: black;
+      border-radius: 20px;
+      padding: 20px;
+      margin: 10px auto;
+      max-width: 400px;
+    }
+    img {
+      width: 100%;
+      border-radius: 20px;
+    }
+  </style>
+</head>
+<body>
+  <h1>🐺♥🐇 的故事</h1>
+  <p>我们已经在一起 <span id="days">XXXX</span> 天啦！</p>
+
+  <div class="card">
+    <h2>第一次见面</h2>
+    <p>那天我们第一次相遇，命运从此悄悄开始了转动。</p>
+    <img src="public/images/story1.jpg" alt="第一次见面" />
+  </div>
+
+  <div class="card">
+    <h2>第一次旅行</h2>
+    <p>我们的第一次旅行，一起看海，一起晒太阳☀️</p>
+    <img src="public/images/story2.jpg" alt="第一次旅行" />
+  </div>
+
+  <div class="card">
+    <h2>毕业典礼</h2>
+    <p>一起走过学习的终点，迈向未来的新起点🎓</p>
+    <img src="public/images/story3.jpg" alt="毕业典礼" />
+  </div>
+
+  <script>
+    const startDate = new Date("2018-12-20");
+    const today = new Date();
+    const diffTime = Math.abs(today - startDate);
+    const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+    document.getElementById("days").textContent = diffDays;
+  </script>
+</body>
+</html>

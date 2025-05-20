@@ -9,29 +9,41 @@
     body {
       background: url('https://i.imgur.com/Wf691Jw.jpeg') center/cover no-repeat;
       font-family: 'ZCOOL KuaiLe', cursive;
+      margin: 0;
+      overflow-x: auto;
+      overflow-y: auto;
+      height: 100vh;
+      scroll-behavior: smooth;
+      padding-bottom: 400px;
+    }
+     .track {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 380px;
+      display: flex;
+      justify-content: flex-start;
+      align-items: flex-end;
+      gap: 30px;
+      padding: 40px;
       overflow-x: auto;
       overflow-y: hidden;
-      height: 100vh;
-      white-space: nowrap;
-      scroll-behavior: smooth;
-    }
-    .track {
-      display: flex;
-      align-items: flex-end;
-      height: 100%;
-      padding: 40px;
-      position: relative;
-    }
-    .station {
+      background: linear-gradient(to top, rgba(255,255,255,0.9), rgba(255,255,255,0));
+      z-index: 10;
+}
+
+     .station {
       background: url('https://i.imgur.com/f7NyktI.png') center/contain no-repeat;
       width: 150px;
-      height: 350px;
-      margin: 0 30px;
-      min-width: 100px;
+      height: 300px;
+      min-width: 120px;
       position: relative;
       cursor: pointer;
       transition: transform 0.3s;
-    }
+      flex-shrink: 0;
+}
+
     .station:hover {
       transform: scale(1.05);
     }

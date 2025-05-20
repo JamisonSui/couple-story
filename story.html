@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>🐺♥🐇 的旅程</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: url('https://i.imgur.com/Wf691Jw.jpeg') center/cover no-repeat;
+      font-family: 'ZCOOL KuaiLe', cursive;
+      overflow-x: auto;
+      overflow-y: hidden;
+      height: 100vh;
+      white-space: nowrap;
+      scroll-behavior: smooth;
+    }
+    .track {
+      display: flex;
+      align-items: flex-end;
+      height: 100%;
+      padding: 40px;
+      position: relative;
+    }
+    .station {
+      background: url('https://i.imgur.com/f7NyktI.png') center/contain no-repeat;
+      width: 150px;
+      height: 350px;
+      margin: 0 30px;
+      position: relative;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+    .station:hover {
+      transform: scale(1.05);
+    }
+    .station .label {
+      position: absolute;
+      bottom: 80px;
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(255,255,255,0.8);
+      padding: 5px 10px;
+      border-radius: 8px;
+      font-weight: bold;
+      color: #e91e63;
+    }
+    .train {
+      position: absolute;
+      left: 0;
+      bottom: 20px;
+      height: 100px;
+      width: 180px;
+      background: url('https://i.imgur.com/9vckjAc.png') center/contain no-repeat;
+      animation: move 15s linear infinite;
+    }
+    @keyframes move {
+      0% { left: -200px; }
+      100% { left: 100%; }
+    }
+    .card {
+      position: fixed;
+      top: 30%; 
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.97);
+      border-radius: 20px;
+      padding: 30px;
+      width: 90%;
+      max-width: 800px;
+      height: auto;
+      z-index: 1000;
+      display: none;
+      text-align: center;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
+    }
+
+    .card h2 {
+      color: #e91e63;
+      margin-bottom: 10px;
+    }
+    .card img, .card video {
+      width: 100%;
+      max-height: 500px;
+      border-radius: 16px;
+      margin-top: 16px;
+      object-fit: contain;
+    }
+    .arrow {
+      position: fixed;
+      right: 20px;
+      top: 50%;
+      font-size: 2rem;
+      animation: bounce 1s infinite alternate;
+      color: #e91e63;
+      z-index: 100;
+    }
+    @keyframes bounce {
+      from { transform: translateY(-50%) translateX(0); }
+      to   { transform: translateY(-50%) translateX(10px); }
+    }
+  </style>
+</head>
+<body>
+  <div class="track">
+    <div class="train"></div>
+
+    <div class="station" onclick="showCard('2019')"><div class="label">2019</div></div>
+    <div class="station" onclick="showCard('2020')"><div class="label">2020</div></div>
+    <div class="station" onclick="showCard('2021')"><div class="label">2021</div></div>
+    <div class="station" onclick="showCard('2022')"><div class="label">2022</div></div>
+    <div class="station" onclick="showCard('2023')"><div class="label">2023</div></div>
+    <div class="station" onclick="showCard('2024')"><div class="label">2024</div></div>
+    <div class="station" onclick="showCard('2025')"><div class="label">2025</div></div>
+  </div>
+
+  <div class="arrow">➡️</div>
+
+  <div class="card" id="popupCard">
+    <h2 id="cardTitle">我们的回忆</h2>
+    <img id="cardImage" src="" alt="">
+    <video id="cardVideo" controls src=""></video>
+  </div>
+
+  <script>
+    const memories = {
+      "2019": {
+        title: "我们的2019",
+        image: "your-2019-image.jpg",
+        video: "https://files.catbox.moe/pwhz4k.mp4"
+      },
+      "2020": {
+        title: "我们的2020",
+        image: "your-2020-image.jpg",
+        video: "https://files.catbox.moe/vr097d.mp4"
+      },
+      "2021": {
+        title: "我们的2021",
+        image: "your-2021-image.jpg",
+        video: "https://files.catbox.moe/yxfgrb.mp4"
+      },
+      "2022": {
+        title: "我们的2022",
+        image: "your-2022-image.jpg",
+        video: "https://files.catbox.moe/f5rumc.mp4"
+      },
+      "2023": {
+        title: "我们的2023",
+        image: "your-2023-image.jpg",
+        video: "https://files.catbox.moe/7noepc.mp4"
+      },
+      "2024": {
+        title: "我们的2024",
+        image: "your-2024-image.jpg",
+        video: "https://files.catbox.moe/tsmrm0.mp4"
+      },
+      "2025": {
+        title: "我们的2025",
+        image: "your-2025-image.jpg",
+        video: "https://files.catbox.moe/wwkaqk.mp4"
+      }
+    };
+
+    function showCard(year) {
+      const data = memories[year];
+      document.getElementById("cardTitle").innerText = data.title;
+      document.getElementById("cardImage").src = data.image;
+      document.getElementById("cardVideo").src = data.video;
+      document.getElementById("popupCard").style.display = "block";
+    }
+
+    document.getElementById("popupCard").addEventListener("click", () => {
+      document.getElementById("popupCard").style.display = "none";
+      document.getElementById("cardVideo").pause();
+    });
+  </script>
+</body>
+</html>

@@ -210,10 +210,8 @@
     <img id="lightbox-img" src="" />
   </div>
 
-  <!-- 🎵 背景音乐自动播放 -->
-  <audio id="bgm" src="https://pouch.jumpshare.com/preview/onfIS93kumNCtPl01sfB8cYLpTQfHn1BKHQPTwcBVxBvGxdgNTBveLzGt3LnsFYIR3sb0jrtYenXwc4OtpgQ5mAXdzaBHMKtPgIh_DZpFMJpDU8WblnlHdJWzxKFbdyAP3bwPj56Wh-hUEdxdhRqOW6yjbN-I2pg_cnoHs_AmgI.mp3" autoplay loop muted></audio>
+  <audio id="bgm" src="https://lit2talks.com/tool/uploads/682dedc8d81aa_ytmp3free.cc_ost-hidden-love-youtubemp3free.org%20(1).mp3" autoplay loop muted></audio>
 
-  <!-- 🎵 浮动控制按钮 -->
   <button id="musicBtn" onclick="toggleMusic()" style="
     position: fixed;
     top: 20px;
@@ -273,7 +271,6 @@
     const bgm = document.getElementById("bgm");
     const musicBtn = document.getElementById("musicBtn");
 
-    // 点击任意位置取消静音播放
     window.addEventListener("click", () => {
       if (bgm.muted) {
         bgm.muted = false;
